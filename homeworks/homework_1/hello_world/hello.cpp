@@ -1,6 +1,6 @@
 #include <cstdio>
 
 int main() {
-    puts("Hello dupa World!");
+    puts("Hello World!");
     return 0;
 }
