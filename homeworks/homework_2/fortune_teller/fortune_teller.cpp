@@ -17,7 +17,7 @@ map<string, string> season_to_adj{{"spring", "STL guru"},
                                   {"winter", "software design hero"}};
 
 array<string, 3> endings{"eats UB for breakfast",
-                         "finds errors quicker than compiler",
+                         "finds errors quicker than the compiler",
                          "is not afraid of C++ error messages"};
 
 void PrintWelcome() {
