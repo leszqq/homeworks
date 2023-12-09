@@ -56,6 +56,7 @@ int main() {
   ReadBornSeason(season);
   ReadAdjectives(adjectives);
 
+  cout << endl << "Here is your description:" << endl;
   string adjective = adjectives.at(name.size() % adjectives.size());
   string noun = season_to_adj.at(season);
   string ending = endings.at(name.size() % endings.size());
