@@ -46,7 +46,7 @@ int main() {
   int k{};
   while (true) {
     ++k;
-    cout << "Please provide the next guess:" << endl;
+    cout << "Please provide the next guess: ";
     int guess;
     cin >> guess;
     if (guess < num) {
@@ -54,8 +54,7 @@ int main() {
     } else if (guess > num) {
       cout << "Your number is too big. Try again!" << endl;
     } else {
-      cout << endl
-           << "You've done it! You guessed the number " << num << " in " << k
+      cout << "You've done it! You guessed the number " << num << " in " << k
            << " guesses!";
       break;
     }
