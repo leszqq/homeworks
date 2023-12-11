@@ -20,7 +20,7 @@ private:
 
 void PrintWelcome() {
   cout << "Welcome to the GUESSING GAME!" << endl;
-  cout << "I willl generate a number and you will guess it!" << endl;
+  cout << "I will generate a number and you will guess it!" << endl;
 }
 
 int GetSmallest() {
