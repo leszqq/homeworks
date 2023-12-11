@@ -54,7 +54,8 @@ int main() {
     } else if (guess > num) {
       cout << "Your number is too big. Try again!" << endl;
     } else {
-      cout << "You've done it! You guessed the number " << num << " in " << k
+      cout << endl
+           << "You've done it! You guessed the number " << num << " in " << k
            << " guesses!";
       break;
     }
