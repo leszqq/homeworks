@@ -24,43 +24,47 @@ void PrintWelcome() {
   cout << "Welcome to the fortune teller program!" << endl;
 }
 
-void ReadName(string &name) {
+inline const string ReadName() {
+  string name;
   cout << "Please enter your name:" << endl;
   cin >> name;
+  return name;
 }
 
-void ReadBornSeason(string &season) {
+inline const string ReadBornSeason() {
+  string season;
   do {
     cout << "Please enter the time of year when you were born:" << endl;
     cout << "(pick from 'spring', 'summer', 'autumn', 'winter')" << endl;
     cin >> season;
   } while (!season_to_adj.count(season));
+  return season;
 }
 
-void ReadAdjectives(vector<string> &adjectives) {
+inline const vector<string> ReadAdjectives() {
   string tmp;
+  vector<string> adjectives;
   cout << "Please enter an adjective:" << endl;
   cin >> tmp;
   adjectives.push_back(tmp);
   cout << "Please enter another adjective:" << endl;
   cin >> tmp;
   adjectives.push_back(tmp);
+  return adjectives;
 }
 
 int main() {
 
-  string name, season;
-  vector<string> adjectives;
   PrintWelcome();
-  ReadName(name);
-  ReadBornSeason(season);
-  ReadAdjectives(adjectives);
+  const string name = ReadName();
+  const string season = ReadBornSeason();
+  const vector<string> adjectives = ReadAdjectives();
 
   cout << endl << "Here is your description:" << endl;
-  string adjective = adjectives.at(name.size() % adjectives.size());
-  string noun = season_to_adj.at(season);
-  string ending = endings.at(name.size() % endings.size());
-  string fortune_telling =
+  const string adjective = adjectives.at(name.size() % adjectives.size());
+  const string noun = season_to_adj.at(season);
+  const string ending = endings.at(name.size() % endings.size());
+  const string fortune_telling =
       name + ", the " + adjective + " " + noun + " that " + ending;
   cout << fortune_telling << endl;
   return 0;
