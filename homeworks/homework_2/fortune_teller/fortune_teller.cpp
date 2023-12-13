@@ -23,15 +23,14 @@ array<string, 3> endings{"eats UB for breakfast",
 void PrintWelcome() {
   cout << "Welcome to the fortune teller program!" << endl;
 }
-
-inline const string ReadName() {
+inline string ReadName() {
   string name;
   cout << "Please enter your name:" << endl;
   cin >> name;
   return name;
 }
 
-inline const string ReadBornSeason() {
+inline string ReadBornSeason() {
   string season;
   do {
     cout << "Please enter the time of year when you were born:" << endl;
@@ -41,7 +40,7 @@ inline const string ReadBornSeason() {
   return season;
 }
 
-inline const vector<string> ReadAdjectives() {
+inline vector<string> ReadAdjectives() {
   string tmp;
   vector<string> adjectives;
   cout << "Please enter an adjective:" << endl;
