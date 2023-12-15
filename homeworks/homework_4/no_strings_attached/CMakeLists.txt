@@ -5,3 +5,4 @@ project(no_strings_attached
   LANGUAGES CXX)
 
 include(cmake/UpdateSubmodules.cmake)
+add_subdirectory(external)
