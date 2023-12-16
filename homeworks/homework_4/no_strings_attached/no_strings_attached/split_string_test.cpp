@@ -50,3 +50,16 @@ TEST(SplitStringTest, ExampleTest1) {
 TEST(SplitStringTest, ExampleTest2) {
   EXPECT_TRUE((Split("aaabaaba", "aa") == vector<string>{"", "ab", "ba"}));
 }
+
+TEST(SplitStringOverloadedTest, ExampleTest1) {
+  EXPECT_TRUE((Split("hello world", " ", 1) == vector<string>{"hello"}));
+}
+
+TEST(SplitStringOverloadedTest, ExampleTest2) {
+  EXPECT_TRUE(
+      (Split("hello world", " ", 2) == vector<string>{"hello", "world"}));
+}
+
+TEST(SplitStringOverloadedTest, ExampleTest3) {
+  EXPECT_TRUE((Split("aaabaaba", "aa", 2) == vector<string>{"", "ab"}));
+}
