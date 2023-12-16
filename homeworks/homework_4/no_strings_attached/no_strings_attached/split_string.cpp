@@ -1,11 +1,43 @@
 #include "split_string.h"
 
 #include <iostream>
-namespace no_strings_attached {
 
 using std::string;
 using std::vector;
 
+namespace {
+
+auto SubstringFound(string::size_type pos) -> bool;
+auto IsNextDelimiter(const string& str,
+                     const string& delimiter,
+                     string::size_type start_pos) -> bool;
+auto GetNextTokenLength(const string& str,
+                        const string& delimiter,
+                        string::size_type start_pos) -> string::size_type;
+auto GetNextToken(const string& str,
+                  const string& delimiter,
+                  string::size_type start_pos) -> string;
+auto IsNextToken(const string& str, string::size_type start_pos) -> bool;
+auto DoSplit(const string& str, const string& delimiter) -> vector<string>;
+}  // namespace
+
+namespace no_strings_attached {
+
+auto Split(const std::string& str, const std::string& delimiter)
+    -> std::vector<std::string> {
+  return DoSplit(str, delimiter);
+}
+
+auto Split(const std::string& str,
+           const std::string& delimiter,
+           int number_of_chunks) -> std::vector<std::string> {
+  std::vector<std::string> splitted{DoSplit(str, delimiter)};
+  splitted.resize(number_of_chunks);
+  return splitted;
+}
+}  // namespace no_strings_attached
+
+namespace {
 auto SubstringFound(string::size_type pos) -> bool {
   return string::npos != pos;
 }
@@ -50,20 +82,4 @@ auto DoSplit(const string& str, const string& delimiter) -> vector<string> {
   }
   return splitted;
 }
-
-auto Split(const std::string& str, const std::string& delimiter)
-    -> std::vector<std::string> {
-  return DoSplit(str, delimiter);
-}
-
-auto Split(const std::string& str,
-           const std::string& delimiter,
-           int number_of_chunks) -> std::vector<std::string> {
-  // ToDo
-  std::vector<std::string> splitted{};
-  splitted = DoSplit(str, delimiter);
-  splitted.resize(number_of_chunks);
-  return splitted;
-}
-
-}  // namespace no_strings_attached
+}  // namespace
