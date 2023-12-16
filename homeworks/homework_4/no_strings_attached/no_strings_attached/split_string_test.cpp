@@ -42,3 +42,11 @@ TEST(SplitStringTest, TrimmeredSplit) {
   const auto splitted = Split(str, "x", 3);
   EXPECT_TRUE((splitted == vector<string>{"t", "e", "s"}));
 }
+
+TEST(SplitStringTest, ExampleTest1) {
+  EXPECT_TRUE((Split("hello world", " ") == vector<string>{"hello", "world"}));
+}
+
+TEST(SplitStringTest, ExampleTest2) {
+  EXPECT_TRUE((Split("aaabaaba", "aa") == vector<string>{"", "ab", "ba"}));
+}
