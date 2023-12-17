@@ -1,6 +1,6 @@
-#include "trim_string.h"
-
 #include <cassert>
+
+#include "string_trim.h"
 
 using no_strings_attached::Side;
 using std::string;

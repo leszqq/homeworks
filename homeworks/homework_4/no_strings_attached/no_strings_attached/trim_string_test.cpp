@@ -1,6 +1,5 @@
-#include "trim_string.h"
-
 #include "gtest/gtest.h"
+#include "string_trim.h"
 
 using no_strings_attached::Side;
 using no_strings_attached::Trim;

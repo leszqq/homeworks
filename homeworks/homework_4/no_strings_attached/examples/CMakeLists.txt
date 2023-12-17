@@ -1,7 +1,7 @@
 add_executable(split_strings split_strings.cpp)
 target_link_libraries(split_strings PUBLIC cxx_setup)
-target_link_libraries(split_strings PRIVATE split_string)
+target_link_libraries(split_strings PRIVATE string_split)
 
 add_executable(trim_strings trim_strings.cpp)
 target_link_libraries(trim_strings PUBLIC cxx_setup)
-target_link_libraries(trim_strings PRIVATE trim_string)
+target_link_libraries(trim_strings PRIVATE string_trim)

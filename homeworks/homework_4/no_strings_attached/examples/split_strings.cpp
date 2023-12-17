@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-#include "no_strings_attached/split_string.h"
+#include "no_strings_attached/string_split.h"
 
 using std::cin;
 using std::cout;

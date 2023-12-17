@@ -1,9 +1,8 @@
-#include "split_string.h"
-
 #include <string>
 #include <vector>
 
 #include "gtest/gtest.h"
+#include "string_split.h"
 
 using no_strings_attached::Split;
 using std::string;

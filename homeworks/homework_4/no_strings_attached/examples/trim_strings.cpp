@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 
-#include "no_strings_attached/trim_string.h"
+#include "no_strings_attached/string_trim.h"
 
 using std::cin;
 using std::cout;
