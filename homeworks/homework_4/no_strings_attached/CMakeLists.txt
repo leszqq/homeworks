@@ -19,5 +19,4 @@ target_include_directories(cxx_setup INTERFACE ${PROJECT_SOURCE_DIR})
 
 add_subdirectory(${PROJECT_NAME})
 add_subdirectory(external)
-add_subdirectory(sandbox)
 add_subdirectory(examples)
