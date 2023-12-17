@@ -19,5 +19,6 @@ auto main() -> int {
   vector<string> splitted{no_strings_attached::Split(line, " "s)};
   cout << "Your split string:"s;
   for (const auto &token : splitted) { cout << " '"s << token << "'"; }
+  cout << "\n";
   return 0;
 }
