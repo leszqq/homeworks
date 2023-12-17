@@ -16,7 +16,9 @@ auto Trim(const std::string& str, char char_to_trim, Side side) -> std::string {
   return DoTrim(str, char_to_trim, side);
 }
 
-auto Trim(const std::string& str) { return DoTrim(str, ' ', Side::kBoth); }
+auto Trim(const std::string& str) -> std::string {
+  return DoTrim(str, ' ', Side::kBoth);
+}
 }  // namespace no_strings_attached
 
 namespace {
