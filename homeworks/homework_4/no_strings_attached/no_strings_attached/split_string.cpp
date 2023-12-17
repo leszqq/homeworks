@@ -72,6 +72,7 @@ auto IsNextToken(const string& str, string::size_type start_pos) -> bool {
 
 auto DoSplit(const string& str, const string& delimiter) -> vector<string> {
   if (delimiter.empty()) { return vector<string>{string{}}; }
+  if (str.empty()) { return vector<string>{string{}}; }
 
   vector<string> splitted{};
   string::size_type pos{0};
