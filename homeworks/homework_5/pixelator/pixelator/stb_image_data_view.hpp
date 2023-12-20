@@ -22,7 +22,7 @@ class StbImageDataView {
   auto operator=(StbImageDataView &&other) noexcept -> StbImageDataView &;
 
   // getters
-  [[nodiscard]] auto size() const -> int;
+  [[nodiscard]] auto size() const -> Size;
   [[nodiscard]] auto rows() const -> int;
   [[nodiscard]] auto cols() const -> int;
 
