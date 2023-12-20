@@ -2,13 +2,14 @@
 #include <ftxui/screen/color.hpp>
 
 namespace pixelator {
+
+struct Size {
+  int row;
+  int col;
+};
+
 class StbImageDataView {
  public:
-  struct Size {
-    int row;
-    int col;
-  };
-
   // ctors
   StbImageDataView();
   explicit StbImageDataView(std::filesystem::path &path);
