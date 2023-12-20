@@ -12,7 +12,7 @@ class StbImageDataView {
  public:
   // ctors
   StbImageDataView();
-  explicit StbImageDataView(std::filesystem::path &path);
+  explicit StbImageDataView(const std::filesystem::path &path);
   StbImageDataView(const StbImageDataView &other) = delete;
   StbImageDataView(StbImageDataView &&other) noexcept;
 
