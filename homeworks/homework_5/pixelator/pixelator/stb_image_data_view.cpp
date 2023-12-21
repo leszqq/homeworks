@@ -26,6 +26,7 @@ StbImageDataView::StbImageDataView(const std::filesystem::path &path) {
       offset += channels;
     }
   }
+  free(char_image);
 }
 
 auto StbImageDataView::size() const -> Size {
