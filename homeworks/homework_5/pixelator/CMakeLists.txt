@@ -21,6 +21,6 @@ include(external/UpdateSubmodules.cmake)
 include(CTest)
 
 # Add code in subdirectories
-add_subdirectory(${PROJECT_NAME})
 add_subdirectory(external)
+add_subdirectory(${PROJECT_NAME})
 add_subdirectory(examples)

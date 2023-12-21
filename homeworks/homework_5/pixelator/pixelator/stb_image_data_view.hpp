@@ -1,5 +1,6 @@
 #include <filesystem>
 #include <ftxui/screen/color.hpp>
+#include <vector>
 
 namespace pixelator {
 
@@ -11,16 +12,18 @@ struct Size {
 class StbImageDataView {
  public:
   // ctors
-  StbImageDataView();
+  StbImageDataView() = default;
   explicit StbImageDataView(const std::filesystem::path &path);
+
+  // can't be copied
   StbImageDataView(const StbImageDataView &other) = delete;
-  StbImageDataView(StbImageDataView &&other) noexcept;
-
-  ~StbImageDataView();
-
-  // operators
   auto operator=(const StbImageDataView &other) -> StbImageDataView & = delete;
-  auto operator=(StbImageDataView &&other) noexcept -> StbImageDataView &;
+
+  // can be moved
+  StbImageDataView(StbImageDataView &&other) = default;
+  auto operator=(StbImageDataView &&other) -> StbImageDataView & = default;
+
+  ~StbImageDataView() = default;
 
   // getters
   [[nodiscard]] auto size() const -> Size;
@@ -30,5 +33,11 @@ class StbImageDataView {
   [[nodiscard]] auto at(int row, int col) const -> ftxui::Color;
 
  private:
+  struct Color {
+    uint8_t red;
+    uint8_t green;
+    uint8_t blue;
+  };
+  std::vector<std::vector<Color>> image_data_{};
 };
 }  // namespace pixelator
