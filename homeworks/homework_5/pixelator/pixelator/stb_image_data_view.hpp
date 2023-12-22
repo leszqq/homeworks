@@ -2,12 +2,9 @@
 #include <ftxui/screen/color.hpp>
 #include <vector>
 
-namespace pixelator {
+#include "size.hpp"
 
-struct Size {
-  int row;
-  int col;
-};
+namespace pixelator {
 
 class StbImageDataView {
  public:
