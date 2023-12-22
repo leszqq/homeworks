@@ -1,3 +1,4 @@
+#pragma once
 #include <filesystem>
 #include <ftxui/screen/color.hpp>
 #include <vector>

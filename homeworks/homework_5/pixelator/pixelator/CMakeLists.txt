@@ -13,12 +13,16 @@ if(BUILD_TESTING)
   include(GoogleTest)
 
   add_executable(stb_image_data_view_test stb_image_data_view_test.cpp)
-  target_link_libraries(stb_image_data_view_test gtest_main stb_image_data_view)
+  target_link_libraries(stb_image_data_view_test PRIVATE gtest_main stb_image_data_view)
 
   add_test(
     NAME stb_image_data_view_test
     COMMAND stb_image_data_view_test
   )
+
+  add_executable(image_test image_test.cpp)
+  target_link_libraries(image_test PRIVATE gtest_main image)
+  gtest_discover_tests(image_test)
 
   # Set properties for the test
   set_tests_properties(stb_image_data_view_test PROPERTIES ENVIRONMENT "DATADIR=${PROJECT_SOURCE_DIR}/pixelator/test_data/")
