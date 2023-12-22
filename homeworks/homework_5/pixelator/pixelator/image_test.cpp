@@ -98,6 +98,7 @@ TEST_F(ImageTest, CopyAssignment) {
 }
 
 TEST_F(ImageTest, MoveConstructor) {
+  ftxui::Color &original_pixel = img_4x8.at(2, 2);
   // Create a move using the move constructor
   Image img_moved(std::move(img_4x8));
 
@@ -109,12 +110,14 @@ TEST_F(ImageTest, MoveConstructor) {
   EXPECT_EQ(img_moved.size().col, 8);
 
   // Verify that the moved image has the original data array
-  EXPECT_EQ(&img_4x8.at(0, 0), &img_moved.at(0, 0));
+  EXPECT_EQ(&original_pixel, &img_moved.at(2, 2));
 }
 
 TEST_F(ImageTest, MoveAssignment) {
   // Create an empty image
   Image img_empty;
+
+  ftxui::Color &original_pixel = img_4x8.at(2, 2);
 
   // Assign the content of img_4x8 to img_empty using move assignment
   img_empty = std::move(img_4x8);
@@ -124,7 +127,7 @@ TEST_F(ImageTest, MoveAssignment) {
   EXPECT_EQ(img_empty.size().col, 8);
 
   // Verify that img_empty has the original data array
-  EXPECT_EQ(&img_empty.at(0, 0), &img_4x8.at(0, 0));
+  EXPECT_EQ(&img_empty.at(2, 2), &original_pixel);
 
   // Verify that the moved-from object is in a valid but unspecified state
   EXPECT_TRUE(img_4x8.empty());
